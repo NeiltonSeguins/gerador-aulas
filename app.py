@@ -3,6 +3,7 @@ import time
 from google import genai
 from markdown import markdown
 import db 
+import feedback_component
 
 # --- NOVA BIBLIOTECA DE PDF ---
 from xhtml2pdf import pisa
@@ -139,6 +140,8 @@ def login_screen():
 
 # --- APP PRINCIPAL ---
 def main_app():
+    feedback_component.feedback_sidebar()
+    
     # Sidebar e Logout
     with st.sidebar:
         st.write(f"Olá, **{st.session_state.username}**")
